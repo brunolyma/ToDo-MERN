@@ -47,7 +47,7 @@ app.get("/todo/complete/:id", async (req: Request, res: Response) => {
 mongoose.set("strictQuery", false);
 mongoose
   .connect(
-    "mongodb+srv://brunolima:3run04!veS@cluster0.us5wa3u.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://brunolima:@cluster0.us5wa3u.mongodb.net/?retryWrites=true&w=majority"
   )
   .then(() => console.log("Connected to DB"))
   .catch(console.error);
