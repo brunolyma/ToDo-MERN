@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+}
+
+body {
+  @apply bg-dark-alt text-light;
+}
+
+.todo {
+  @apply relative flex items-center bg-dark p-4 mb-4 rounded-2xl transition duration-500 cursor-pointer hover:bg-opacity-70;
+}
+
+.todo .checkbox {
+  @apply w-5 h-5 mr-4 rounded-full bg-dark-alt transition duration-[0.4s];
+}
+
+.todo.is-complete .checkbox {
+  @apply bg-primary bg-gradient-to-b from-primary to-secondary;
+}
+
+.todo .text {
+  @apply text-xl;
+}
+
+.todo.is-complete .text {
+  @apply line-through;
+}
+
+.todo .delete-todo {
+  @apply absolute top-1/2 right-4 -translate-y-1/2 w-7 h-7 text-light text-base rounded-[50%] flex items-center justify-center transition duration-200 hover:bg-light;
+}
+
+.addPopup {
+  @apply fixed bottom-8 right-8 flex items-center justify-center w-16 h-16 bg-gradient-to-b from-primary to-secondary rounded-full text-light text-3xl font-bold cursor-pointer;
+}
+
+.popup {
+  box-shadow: 0 0.3rem 2.4rem #131a26;
+  @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-light p-8 rounded-2xl;
+}
+
+.closePopup {
+  @apply flex justify-center items-center absolute top-4 right-4 w-6 h-6 text-xl bg-gradient-to-b from-secondary to-primary rounded-[50%] text-light cursor-pointer;
+}
+
+/* /* .add-popup-input {
+  box-shadow: 0 0.3rem 2.4rem rgba(0, 0, 0, 0.2);
+} */
+/* .add-popup-input:hover:focus {
+  box-shadow: 0 10px 2.4rem black;
+} */
